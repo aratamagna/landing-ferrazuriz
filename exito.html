@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Enviado – Francisco Javier Errázuriz Quiroz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a1a2e;
+            --primary-accent: #b8860b;
+            --primary-accent-light: #d4a843;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #16213e 100%);
+        }
+
+        .success-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(39, 174, 96, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .success-icon i {
+            font-size: 2.5rem;
+            color: #27ae60;
+        }
+
+        h1 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-gold {
+            background: var(--primary-accent);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background: var(--primary-accent-light);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(184,134,11,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>¡Mensaje Enviado!</h1>
+        <p>
+            Gracias por contactarnos. Tu consulta ha sido recibida correctamente y será revisada a la brevedad.
+        </p>
+        <p style="font-style: italic; color: var(--primary-accent);">
+            Te responderemos dentro de las próximas 24 horas hábiles.
+        </p>
+        <a href="/" class="btn-gold">
+            <i class="fas fa-arrow-left mr-2"></i> Volver al Inicio
+        </a>
+    </div>
+</body>
+</html>
