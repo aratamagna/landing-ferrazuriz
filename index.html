@@ -780,11 +780,15 @@
             </div>
             <div class="columns is-centered">
                 <div class="column is-6">
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <form class="contact-form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/exito.html">
+                        <input type="hidden" name="form-name" value="contacto">
+                        <p class="is-hidden">
+                            <label>No llenar si eres humano: <input name="bot-field"></label>
+                        </p>
                         <div class="field">
                             <label class="label" style="color: var(--text-dark); font-weight: 500;">Nombre</label>
                             <div class="control has-icons-left">
-                                <input class="input" type="text" placeholder="Tu nombre completo" required>
+                                <input class="input" type="text" name="nombre" placeholder="Tu nombre completo" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -793,7 +797,7 @@
                         <div class="field">
                             <label class="label" style="color: var(--text-dark); font-weight: 500;">Correo Electrónico</label>
                             <div class="control has-icons-left">
-                                <input class="input" type="email" placeholder="tu@correo.com" required>
+                                <input class="input" type="email" name="email" placeholder="tu@correo.com" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -802,7 +806,7 @@
                         <div class="field">
                             <label class="label" style="color: var(--text-dark); font-weight: 500;">Teléfono</label>
                             <div class="control has-icons-left">
-                                <input class="input" type="tel" placeholder="+56 9 XXXX XXXX">
+                                <input class="input" type="tel" name="telefono" placeholder="+56 9 XXXX XXXX">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-phone"></i>
                                 </span>
@@ -812,7 +816,7 @@
                             <label class="label" style="color: var(--text-dark); font-weight: 500;">Área Legal</label>
                             <div class="control has-icons-left">
                                 <div class="select is-fullwidth">
-                                    <select>
+                                    <select name="area-legal">
                                         <option value="">Selecciona un área</option>
                                         <option>Derecho Laboral</option>
                                         <option>Derecho Administrativo</option>
@@ -827,7 +831,7 @@
                         <div class="field">
                             <label class="label" style="color: var(--text-dark); font-weight: 500;">Mensaje</label>
                             <div class="control">
-                                <textarea class="textarea" placeholder="Describe brevemente tu situación..." rows="4" required></textarea>
+                                <textarea class="textarea" name="mensaje" placeholder="Describe brevemente tu situación..." rows="4" required></textarea>
                             </div>
                         </div>
                         <div class="field">
@@ -956,20 +960,15 @@
             }
         }
 
-        // Form submit handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            const btn = event.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-
-            btn.innerHTML = '<i class="fas fa-check mr-2"></i> ¡Mensaje Enviado!';
-            btn.style.background = '#27ae60';
-
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                event.target.reset();
-            }, 3000);
+        // Form submit handler - Netlify handles actual submission
+        // This provides UX feedback before redirect
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', function() {
+                const btn = form.querySelector('button[type="submit"]');
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Enviando...';
+                btn.disabled = true;
+            });
         }
     </script>
 </body>
