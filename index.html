@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abogado en Santiago especializado en Derecho Laboral, Administrativo, Civil, Familia y Migratorio. Asesoría jurídica estratégica y representación judicial personalizada.">
+    <title>Francisco Javier Errázuriz Quiroz – Abogado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a1a2e;
+            --primary-accent: #b8860b;
+            --primary-accent-light: #d4a843;
+            --text-dark: #2c2c2c;
+            --text-medium: #555;
+            --bg-light: #fafafa;
+            --bg-white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--text-dark);
+        }
+
+        .navbar {
+            background: var(--primary-dark);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-item, .navbar-link {
+            color: #fff !important;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-item:hover {
+            color: var(--primary-accent-light) !important;
+            background: transparent !important;
+        }
+
+        .navbar-burger span {
+            background-color: #fff !important;
+        }
+
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #16213e 100%);
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="none" stroke="rgba(184,134,11,0.05)" stroke-width="0.5" x="10" y="10" width="80" height="80"/></svg>') repeat;
+            pointer-events: none;
+        }
+
+        .hero-section .hero-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle-text {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        .accent-text {
+            color: var(--primary-accent-light);
+            font-style: italic;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--primary-accent);
+            margin: 1rem auto 2.5rem auto;
+        }
+
+
+        .about-section {
+            background: var(--bg-white);
+        }
+
+        .about-values li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-medium);
+        }
+
+        .about-values li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--primary-accent);
+            border-radius: 50%;
+        }
+
+        .practice-card {
+            background: var(--bg-white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .practice-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .practice-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .practice-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .practice-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .practice-card .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(184,134,11,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .practice-card .icon-circle i {
+            color: var(--primary-accent);
+            font-size: 1.2rem;
+        }
+
+
+        .practice-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .practice-card ul li {
+            padding: 0.3rem 0;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .practice-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .experience-section {
+            background: var(--primary-dark);
+            color: #fff;
+        }
+
+        .experience-item {
+            padding: 1.5rem;
+            border-left: 2px solid var(--primary-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-item h4 {
+            color: var(--primary-accent-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .why-card .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(184,134,11,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem auto;
+        }
+
+        .why-card .icon-box i {
+            color: var(--primary-accent);
+            font-size: 1.4rem;
+        }
+
+        .why-card h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .why-card p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-accent);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-white);
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .faq-question:hover {
+            background: #fdf9f0;
+        }
+
+        .faq-question i {
+            color: var(--primary-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.2rem;
+            max-height: 200px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #16213e 100%);
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .btn-gold {
+            background: var(--primary-accent);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background: var(--primary-accent-light);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(184,134,11,0.3);
+        }
+
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--primary-accent-light);
+            border: 1px solid var(--primary-accent-light);
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--primary-accent);
+            color: #fff;
+            border-color: var(--primary-accent);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 2px rgba(184,134,11,0.1);
+        }
+
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 1.5rem 2rem;
+        }
+
+        .footer a {
+            color: var(--primary-accent-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+        }
+
+        .whatsapp-float i {
+            color: #fff;
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#inicio" style="font-weight: 600; font-size: 1rem; letter-spacing: 1px;">
+                    FJE<span style="color: var(--primary-accent-light);">Q</span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <div id="mainNav" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#inicio">Inicio</a>
+                    <a class="navbar-item" href="#sobre-mi">Sobre Mí</a>
+                    <a class="navbar-item" href="#areas">Áreas de Práctica</a>
+                    <a class="navbar-item" href="#experiencia">Experiencia</a>
+                    <a class="navbar-item" href="#faq">Preguntas Frecuentes</a>
+                    <a class="navbar-item" href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero hero-section is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-7">
+                        <p class="accent-text mb-4" style="font-size: 1rem;">Defensa jurídica estratégica.</p>
+                        <h1 class="hero-title">Defensa jurídica estratégica, cercana y eficaz.</h1>
+                        <p class="hero-subtitle-text mb-5">
+                            Asesoría y representación legal en materias de Derecho Laboral, Administrativo, Civil, Familia y Migratorio, con experiencia tanto en el ejercicio privado como en instituciones públicas del Estado de Chile.
+                        </p>
+                        <p class="hero-subtitle-text mb-5" style="font-size: 0.95rem; opacity: 0.7;">
+                            Más de 5 años de experiencia en litigación y asesoría jurídica, participación en procedimientos ante Tribunales de Justicia, Cortes de Apelaciones y Corte Suprema.
+                        </p>
+                        <p class="accent-text mb-5" style="font-size: 1.1rem; font-weight: 500;">
+                            Tu problema legal merece una estrategia clara y una defensa sólida.
+                        </p>
+                        <div class="buttons">
+                            <a href="#contacto" class="btn-gold">Agenda una Consulta</a>
+                            <a href="#areas" class="btn-outline-gold">Áreas de Práctica</a>
+                        </div>
+                    </div>
+                    <div class="column is-5 has-text-centered">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; background: rgba(184,134,11,0.1); border: 2px solid rgba(184,134,11,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <i class="fas fa-balance-scale" style="font-size: 4rem; color: var(--primary-accent-light);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="section about-section">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="columns is-vcentered">
+                <div class="column is-4 has-text-centered">
+                    <div style="width: 200px; height: 200px; border-radius: 50%; background: var(--primary-dark); display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 3px solid var(--primary-accent);">
+                        <i class="fas fa-user-tie" style="font-size: 4rem; color: var(--primary-accent-light);"></i>
+                    </div>
+                    <h3 style="color: var(--primary-dark); font-size: 1.3rem; margin-top: 1.5rem; font-weight: 600;">Francisco Javier Errázuriz Quiroz</h3>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Abogado – Universidad Central de Chile</p>
+                </div>
+                <div class="column is-8">
+                    <p class="mb-4" style="color: var(--text-medium); line-height: 1.8;">
+                        Soy abogado egresado de la Universidad Central de Chile, con experiencia en litigación, asesoría jurídica y representación judicial en diversas áreas del derecho, especialmente en materias laborales, administrativas, civiles, de familia y migratorias.
+                    </p>
+                    <p class="mb-4" style="color: var(--text-medium); line-height: 1.8;">
+                        He desarrollado mi trayectoria tanto en el ejercicio independiente de la profesión como en instituciones públicas, participando en la redacción de estrategias judiciales, recursos constitucionales, procedimientos disciplinarios y defensa administrativa.
+                    </p>
+                    <h4 style="color: var(--primary-dark); font-weight: 600; margin-bottom: 1rem;">Mi enfoque profesional:</h4>
+                    <ul class="about-values">
+                        <li>Atención cercana y transparente.</li>
+                        <li>Estrategias jurídicas claras y realistas.</li>
+                        <li>Defensa técnica y comprometida.</li>
+                        <li>Comunicación constante con cada cliente.</li>
+                        <li>Soluciones prácticas orientadas a resultados.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Practice Areas Section -->
+    <section id="areas" class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title">Áreas de Práctica</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="columns is-multiline">
+                <!-- Derecho Laboral -->
+                <div class="column is-4">
+                    <div class="practice-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Derecho Laboral</h3>
+                        <ul>
+                            <li>Despidos injustificados</li>
+                            <li>Tutela laboral</li>
+                            <li>Cobro de prestaciones laborales</li>
+                            <li>Autodespido</li>
+                            <li>Acoso laboral y Ley Karin</li>
+                            <li>Defensa de trabajadores y empleadores</li>
+                            <li>Negociaciones ante la Dirección del Trabajo</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Derecho Administrativo -->
+                <div class="column is-4">
+                    <div class="practice-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Derecho Administrativo</h3>
+                        <ul>
+                            <li>Sumarios administrativos</li>
+                            <li>Procedimientos disciplinarios</li>
+                            <li>Recursos administrativos</li>
+                            <li>Contraloría General de la República</li>
+                            <li>Recursos de protección</li>
+                            <li>Contencioso-administrativos</li>
+                            <li>Defensa de funcionarios públicos</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Derecho Civil -->
+                <div class="column is-4">
+                    <div class="practice-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3>Derecho Civil</h3>
+                        <ul>
+                            <li>Cobro de deudas</li>
+                            <li>Indemnización de perjuicios</li>
+                            <li>Contratos</li>
+                            <li>Responsabilidad civil</li>
+                            <li>Conflictos patrimoniales</li>
+                            <li>Juicios ejecutivos y ordinarios</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Derecho de Familia -->
+                <div class="column is-4">
+                    <div class="practice-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Derecho de Familia</h3>
+                        <ul>
+                            <li>Divorcios</li>
+                            <li>Cuidado personal</li>
+                            <li>Relación directa y regular</li>
+                            <li>Pensión de alimentos</li>
+                            <li>Violencia intrafamiliar</li>
+                            <li>Medidas de protección</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Derecho Migratorio -->
+                <div class="column is-4">
+                    <div class="practice-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Derecho Migratorio</h3>
+                        <ul>
+                            <li>Residencias temporales y definitivas</li>
+                            <li>Nacionalización</li>
+                            <li>Recursos administrativos y judiciales</li>
+                            <li>Regularización migratoria</li>
+                            <li>Reunificación familiar</li>
+                            <li>Recursos ante demoras administrativas</li>
+                        </ul>
+                        <p style="font-size: 0.85rem; color: var(--primary-accent); margin-top: 0.8rem; font-style: italic;">
+                            Experiencia previa en el Servicio Nacional de Migraciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <section id="experiencia" class="section experience-section">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title" style="color: #fff;">Experiencia Profesional</h2>
+                <div class="section-divider"></div>
+                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto;">
+                    He trabajado en instituciones públicas y privadas, participando en litigación, asesoría y procedimientos administrativos complejos.
+                </p>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="experience-item">
+                        <h4><i class="fas fa-hospital mr-2"></i> Ministerio de Salud de Chile</h4>
+                        <p>Participación en procedimientos administrativos y asesoría jurídica institucional.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4><i class="fas fa-passport mr-2"></i> Servicio Nacional de Migraciones</h4>
+                        <p>Experiencia en gestión migratoria, procedimientos y defensa administrativa.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4><i class="fas fa-gavel mr-2"></i> Ejercicio Independiente</h4>
+                        <p>Litigación en tribunales de justicia, Cortes de Apelaciones y Corte Suprema.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4><i class="fas fa-building mr-2"></i> Asesoría Jurídica Corporativa</h4>
+                        <p>Formación complementaria en Derecho Corporativo, Compliance y Derecho Laboral.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Me Section -->
+    <section class="section" style="background: var(--bg-white);">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title">¿Por Qué Elegirme?</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <div class="why-card">
+                        <div class="icon-box">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Compromiso Real</h4>
+                        <p>Cada cliente recibe atención personalizada y una estrategia jurídica adaptada a sus necesidades.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="why-card">
+                        <div class="icon-box">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h4>Experiencia en Litigación</h4>
+                        <p>Participación en procedimientos judiciales y recursos ante tribunales superiores de justicia.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="why-card">
+                        <div class="icon-box">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>Visión Pública y Privada</h4>
+                        <p>Comprensión de la lógica administrativa y la defensa de particulares frente a organismos públicos.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="why-card">
+                        <div class="icon-box">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4>Comunicación Clara</h4>
+                        <p>Explicaciones simples, honestas y transparentes sobre cada etapa del proceso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿La primera reunión es presencial u online?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Dependiendo del caso, las reuniones pueden realizarse de forma presencial o telemática.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Trabaja casos en todo Chile?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, especialmente mediante tramitación digital y audiencias remotas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Cómo se cobran los honorarios?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los honorarios se determinan según la complejidad y naturaleza de cada asunto, informándose previamente de manera transparente.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Qué documentos debo llevar a una consulta?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Dependerá del caso, pero idealmente toda documentación relacionada con el conflicto o procedimiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container has-text-centered">
+            <h2 class="mb-4">¿Necesitas asesoría legal?</h2>
+            <p class="mb-5" style="max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
+                Agenda una consulta y recibe orientación jurídica clara, estratégica y personalizada para tu caso.
+            </p>
+            <p class="mb-5" style="color: var(--primary-accent-light); font-style: italic;">
+                Atención profesional, confidencial y comprometida con tus objetivos.
+            </p>
+            <a href="#contacto" class="btn-gold" style="font-size: 1.1rem; padding: 1rem 3rem;">
+                <i class="fas fa-calendar-check mr-2"></i> Agenda tu Consulta
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contacto" class="section" style="background: var(--bg-white);">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="section-title">Contacto</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="field">
+                            <label class="label" style="color: var(--text-dark); font-weight: 500;">Nombre</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Tu nombre completo" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color: var(--text-dark); font-weight: 500;">Correo Electrónico</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="email" placeholder="tu@correo.com" required>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color: var(--text-dark); font-weight: 500;">Teléfono</label>
+                            <div class="control has-icons-left">
+                                <input class="input" type="tel" placeholder="+56 9 XXXX XXXX">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-phone"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color: var(--text-dark); font-weight: 500;">Área Legal</label>
+                            <div class="control has-icons-left">
+                                <div class="select is-fullwidth">
+                                    <select>
+                                        <option value="">Selecciona un área</option>
+                                        <option>Derecho Laboral</option>
+                                        <option>Derecho Administrativo</option>
+                                        <option>Derecho Civil</option>
+                                        <option>Derecho de Familia</option>
+                                        <option>Derecho Migratorio</option>
+                                        <option>Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color: var(--text-dark); font-weight: 500;">Mensaje</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Describe brevemente tu situación..." rows="4" required></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="btn-gold" style="width: 100%; padding: 1rem;">
+                                    <i class="fas fa-paper-plane mr-2"></i> Enviar Consulta
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 0.8rem;">Francisco Javier Errázuriz Quiroz – Abogado</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7;">
+                        Asesoría jurídica y representación judicial en Derecho Laboral, Administrativo, Civil, Familia y Migratorio.
+                    </p>
+                </div>
+                <div class="column is-3">
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 0.8rem;">Navegación</h4>
+                    <p><a href="#inicio">Inicio</a></p>
+                    <p><a href="#sobre-mi">Sobre Mí</a></p>
+                    <p><a href="#areas">Áreas de Práctica</a></p>
+                    <p><a href="#experiencia">Experiencia</a></p>
+                    <p><a href="#faq">Preguntas Frecuentes</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+                <div class="column is-3">
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 0.8rem;">Redes</h4>
+                    <p>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin mr-2"></i> LinkedIn</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+                    </p>
+                </div>
+            </div>
+            <hr style="background: rgba(255,255,255,0.1); margin: 2rem 0;">
+            <div class="has-text-centered">
+                <p style="font-size: 0.85rem;">&copy; 2025 Francisco Javier Errázuriz Quiroz. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/569XXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar burger toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.getElementById('mainNav');
+
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            // Close menu on link click (mobile)
+            const navLinks = menu.querySelectorAll('.navbar-item');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.classList.remove('is-active');
+                    menu.classList.remove('is-active');
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+                } else {
+                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                }
+            });
+
+            // Scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.practice-card, .why-card, .experience-item, .faq-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Form submit handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-check mr-2"></i> ¡Mensaje Enviado!';
+            btn.style.background = '#27ae60';
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                event.target.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
